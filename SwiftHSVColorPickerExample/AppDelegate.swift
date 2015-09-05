@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  SwiftHSVColorPicker
+//  SwiftHSVColorPickerExample
 //
-//  Created by Johan Kasperi on 2015-08-22.
+//  Created by Johan Kasperi on 2015-09-06.
 //  Copyright (c) 2015 kspri. All rights reserved.
 //
 

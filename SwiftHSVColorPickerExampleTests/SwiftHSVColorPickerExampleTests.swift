@@ -1,15 +1,15 @@
 //
-//  SwiftHSVColorPickerTests.swift
-//  SwiftHSVColorPickerTests
+//  SwiftHSVColorPickerExampleTests.swift
+//  SwiftHSVColorPickerExampleTests
 //
-//  Created by Johan Kasperi on 2015-08-22.
+//  Created by Johan Kasperi on 2015-09-06.
 //  Copyright (c) 2015 kspri. All rights reserved.
 //
 
 import UIKit
 import XCTest
 
-class SwiftHSVColorPickerTests: XCTestCase {
+class SwiftHSVColorPickerExampleTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
