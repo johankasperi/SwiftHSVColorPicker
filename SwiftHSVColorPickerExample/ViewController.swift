@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  SwiftHSVColorPicker
 //
-//  Created by Johan Kasperi on 2015-08-20.
+//  Created by johankasperi on 2015-08-20.
 //
 
 import UIKit
