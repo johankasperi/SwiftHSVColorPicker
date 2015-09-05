@@ -11,7 +11,6 @@
 		4F05B5D21B88DFD50032CC4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F05B5D11B88DFD50032CC4E /* ViewController.swift */; };
 		4F05B5D51B88DFD50032CC4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F05B5D31B88DFD50032CC4E /* Main.storyboard */; };
 		4F05B5D71B88DFD50032CC4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F05B5D61B88DFD50032CC4E /* Images.xcassets */; };
-		4F05B5DA1B88DFD50032CC4E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F05B5D81B88DFD50032CC4E /* LaunchScreen.xib */; };
 		4F05B5E61B88DFD50032CC4E /* SwiftHSVColorPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F05B5E51B88DFD50032CC4E /* SwiftHSVColorPickerTests.swift */; };
 		4F05B5F51B88E0880032CC4E /* BrightnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F05B5F01B88E0880032CC4E /* BrightnessView.swift */; };
 		4F05B5F61B88E0880032CC4E /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F05B5F11B88E0880032CC4E /* ColorPicker.swift */; };
@@ -37,7 +36,6 @@
 		4F05B5D11B88DFD50032CC4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4F05B5D41B88DFD50032CC4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F05B5D61B88DFD50032CC4E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4F05B5D91B88DFD50032CC4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4F05B5DF1B88DFD50032CC4E /* SwiftHSVColorPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftHSVColorPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F05B5E41B88DFD50032CC4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F05B5E51B88DFD50032CC4E /* SwiftHSVColorPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHSVColorPickerTests.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 				4F05B5D11B88DFD50032CC4E /* ViewController.swift */,
 				4F05B5D31B88DFD50032CC4E /* Main.storyboard */,
 				4F05B5D61B88DFD50032CC4E /* Images.xcassets */,
-				4F05B5D81B88DFD50032CC4E /* LaunchScreen.xib */,
 				4F05B5CD1B88DFD40032CC4E /* Supporting Files */,
 			);
 			path = SwiftHSVColorPicker;
@@ -216,7 +213,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F05B5D51B88DFD50032CC4E /* Main.storyboard in Resources */,
-				4F05B5DA1B88DFD50032CC4E /* LaunchScreen.xib in Resources */,
 				4F05B5D71B88DFD50032CC4E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,14 +266,6 @@
 				4F05B5D41B88DFD50032CC4E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4F05B5D81B88DFD50032CC4E /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F05B5D91B88DFD50032CC4E /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -439,6 +427,7 @@
 				4F05B5EB1B88DFD50032CC4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F05B5EC1B88DFD50032CC4E /* Build configuration list for PBXNativeTarget "SwiftHSVColorPickerTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +436,7 @@
 				4F05B5EE1B88DFD50032CC4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

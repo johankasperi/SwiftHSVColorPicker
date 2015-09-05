@@ -32,5 +32,12 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func getSelectedColor(sender: UIButton) {
+        // Get the selected color from the Color Picker.
+        let selectedColor = colorPicker.color
+        
+        println(selectedColor)
+    }
 }
 
