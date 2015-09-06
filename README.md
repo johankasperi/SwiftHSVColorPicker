@@ -12,13 +12,13 @@ Copy the contents of "Source" to your project.
 
 Cocoapods:
 ```ruby
-pod 'SwiftHSVColorPicker'
+pod 'SwiftHSVColorPicker', '~> 1.0.4'
 ```
 
 ## How to use
 Add a UIView of subclass "SwiftHSVColorPicker" to your storyboard or create it programmatically:
 ```swift
-let colorPicker = SwiftHSVColorPicker(frame: CGRectMake(0, 0, 300, 400))
+let colorPicker = SwiftHSVColorPicker(frame: CGRectMake(10, 20, 300, 400))
 self.view.addSubview(colorPicker)
 ```
 After adding the Color Picker to your project, initialize your SwiftHSVColorPicker by calling:
