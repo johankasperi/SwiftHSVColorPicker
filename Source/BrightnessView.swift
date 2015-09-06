@@ -9,7 +9,7 @@ import UIKit
 
 class BrightnessView: UIView {
     
-    var delegate: ColorPicker?
+    var delegate: SwiftHSVColorPicker?
 
     var colorLayer: CAGradientLayer!
     

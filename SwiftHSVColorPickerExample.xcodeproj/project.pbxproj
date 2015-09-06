@@ -12,7 +12,7 @@
 		4F90DDA91B9BD0270008F191 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F90DDA71B9BD0270008F191 /* Main.storyboard */; };
 		4F90DDBA1B9BD0270008F191 /* SwiftHSVColorPickerExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DDB91B9BD0270008F191 /* SwiftHSVColorPickerExampleTests.swift */; };
 		4F90DDC91B9BD07F0008F191 /* BrightnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DDC41B9BD07F0008F191 /* BrightnessView.swift */; };
-		4F90DDCA1B9BD07F0008F191 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DDC51B9BD07F0008F191 /* ColorPicker.swift */; };
+		4F90DDCA1B9BD07F0008F191 /* SwiftHSVColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DDC51B9BD07F0008F191 /* SwiftHSVColorPicker.swift */; };
 		4F90DDCB1B9BD07F0008F191 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DDC61B9BD07F0008F191 /* ColorUtils.swift */; };
 		4F90DDCC1B9BD07F0008F191 /* ColorWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DDC71B9BD07F0008F191 /* ColorWheel.swift */; };
 		4F90DDCD1B9BD07F0008F191 /* SelectedColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DDC81B9BD07F0008F191 /* SelectedColorView.swift */; };
@@ -39,7 +39,7 @@
 		4F90DDB81B9BD0270008F191 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F90DDB91B9BD0270008F191 /* SwiftHSVColorPickerExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHSVColorPickerExampleTests.swift; sourceTree = "<group>"; };
 		4F90DDC41B9BD07F0008F191 /* BrightnessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrightnessView.swift; path = Source/BrightnessView.swift; sourceTree = SOURCE_ROOT; };
-		4F90DDC51B9BD07F0008F191 /* ColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPicker.swift; path = Source/ColorPicker.swift; sourceTree = SOURCE_ROOT; };
+		4F90DDC51B9BD07F0008F191 /* SwiftHSVColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftHSVColorPicker.swift; path = Source/SwiftHSVColorPicker.swift; sourceTree = SOURCE_ROOT; };
 		4F90DDC61B9BD07F0008F191 /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorUtils.swift; path = Source/ColorUtils.swift; sourceTree = SOURCE_ROOT; };
 		4F90DDC71B9BD07F0008F191 /* ColorWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorWheel.swift; path = Source/ColorWheel.swift; sourceTree = SOURCE_ROOT; };
 		4F90DDC81B9BD07F0008F191 /* SelectedColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectedColorView.swift; path = Source/SelectedColorView.swift; sourceTree = SOURCE_ROOT; };
@@ -124,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				4F90DDC41B9BD07F0008F191 /* BrightnessView.swift */,
-				4F90DDC51B9BD07F0008F191 /* ColorPicker.swift */,
+				4F90DDC51B9BD07F0008F191 /* SwiftHSVColorPicker.swift */,
 				4F90DDC61B9BD07F0008F191 /* ColorUtils.swift */,
 				4F90DDC71B9BD07F0008F191 /* ColorWheel.swift */,
 				4F90DDC81B9BD07F0008F191 /* SelectedColorView.swift */,
@@ -232,7 +232,7 @@
 			files = (
 				4F90DDA61B9BD0270008F191 /* ViewController.swift in Sources */,
 				4F90DDCB1B9BD07F0008F191 /* ColorUtils.swift in Sources */,
-				4F90DDCA1B9BD07F0008F191 /* ColorPicker.swift in Sources */,
+				4F90DDCA1B9BD07F0008F191 /* SwiftHSVColorPicker.swift in Sources */,
 				4F90DDCD1B9BD07F0008F191 /* SelectedColorView.swift in Sources */,
 				4F90DDD11B9BD5B80008F191 /* TestView.swift in Sources */,
 				4F90DDA41B9BD0270008F191 /* AppDelegate.swift in Sources */,

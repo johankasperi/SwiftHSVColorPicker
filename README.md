@@ -16,12 +16,12 @@ pod 'SwiftHSVColorPicker'
 ```
 
 ## How to use
-Add a UIView of subclass "ColorPicker" to your storyboard or create it programmatically:
+Add a UIView of subclass "SwiftHSVColorPicker" to your storyboard or create it programmatically:
 ```swift
-let colorPicker = ColorPicker(frame: CGRectMake(0, 0, 300, 400))
-self.view.addSubview(colorPicker2)
+let colorPicker = SwiftHSVColorPicker(frame: CGRectMake(0, 0, 300, 400))
+self.view.addSubview(colorPicker)
 ```
-After adding the Color Picker to your project, initialize your ColorPicker by calling:
+After adding the Color Picker to your project, initialize your SwiftHSVColorPicker by calling:
 ```swift
 colorPicker.setViewColor(UIColor.redColor())
 ```

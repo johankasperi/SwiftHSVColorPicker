@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     var selectedColor: UIColor = UIColor.yellowColor()
     
     // IBOutlet for the ColorPicker
-    @IBOutlet var colorPicker: ColorPicker!
+    @IBOutlet var colorPicker: SwiftHSVColorPicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
