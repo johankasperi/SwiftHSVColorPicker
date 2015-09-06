@@ -32,7 +32,7 @@ class BrightnessView: UIView {
         var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
         var ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
         if (!ok) {
-            println("ColorPicker: exception <The color provided to ColorPicker is not convertible to HSB>")
+            println("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
         }
         colorLayer = CAGradientLayer()
         colorLayer.colors = [
@@ -114,7 +114,7 @@ class BrightnessView: UIView {
         var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
         var ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
         if (!ok) {
-            println("ColorPicker: exception <The color provided to ColorPicker is not convertible to HSB>")
+            println("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
         }
 
         return CGPoint(x: brightness * frame.width, y: frame.height / 2)
@@ -125,7 +125,7 @@ class BrightnessView: UIView {
         var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
         var ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
         if (!ok) {
-            println("ColorPicker: exception <The color provided to ColorPicker is not convertible to HSB>")
+            println("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
         }
         colorLayer.colors = [
             UIColor.blackColor().CGColor,

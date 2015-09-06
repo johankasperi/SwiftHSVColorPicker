@@ -16,7 +16,6 @@
 		4F90DDCB1B9BD07F0008F191 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DDC61B9BD07F0008F191 /* ColorUtils.swift */; };
 		4F90DDCC1B9BD07F0008F191 /* ColorWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DDC71B9BD07F0008F191 /* ColorWheel.swift */; };
 		4F90DDCD1B9BD07F0008F191 /* SelectedColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DDC81B9BD07F0008F191 /* SelectedColorView.swift */; };
-		4F90DDD11B9BD5B80008F191 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DDD01B9BD5B80008F191 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +42,6 @@
 		4F90DDC61B9BD07F0008F191 /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorUtils.swift; path = Source/ColorUtils.swift; sourceTree = SOURCE_ROOT; };
 		4F90DDC71B9BD07F0008F191 /* ColorWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorWheel.swift; path = Source/ColorWheel.swift; sourceTree = SOURCE_ROOT; };
 		4F90DDC81B9BD07F0008F191 /* SelectedColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectedColorView.swift; path = Source/SelectedColorView.swift; sourceTree = SOURCE_ROOT; };
-		4F90DDD01B9BD5B80008F191 /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +88,6 @@
 				4F90DDA51B9BD0270008F191 /* ViewController.swift */,
 				4F90DDA71B9BD0270008F191 /* Main.storyboard */,
 				4F90DDA11B9BD0270008F191 /* Supporting Files */,
-				4F90DDD01B9BD5B80008F191 /* TestView.swift */,
 			);
 			path = SwiftHSVColorPickerExample;
 			sourceTree = "<group>";
@@ -234,7 +231,6 @@
 				4F90DDCB1B9BD07F0008F191 /* ColorUtils.swift in Sources */,
 				4F90DDCA1B9BD07F0008F191 /* SwiftHSVColorPicker.swift in Sources */,
 				4F90DDCD1B9BD07F0008F191 /* SelectedColorView.swift in Sources */,
-				4F90DDD11B9BD5B80008F191 /* TestView.swift in Sources */,
 				4F90DDA41B9BD0270008F191 /* AppDelegate.swift in Sources */,
 				4F90DDC91B9BD07F0008F191 /* BrightnessView.swift in Sources */,
 				4F90DDCC1B9BD07F0008F191 /* ColorWheel.swift in Sources */,

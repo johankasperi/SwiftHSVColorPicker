@@ -251,7 +251,7 @@ class ColorWheel: UIView {
         var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
         var ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
         if (!ok) {
-            println("ColorPicker: exception <The color provided to ColorPicker is not convertible to HSB>")
+            println("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
         }
         self.color = color
         self.brightness = brightness
@@ -266,7 +266,7 @@ class ColorWheel: UIView {
         var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
         var ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
         if (!ok) {
-            println("ColorPicker: exception <The color provided to ColorPicker is not convertible to HSB>")
+            println("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
         }
         self.brightness = _brightness
         brightnessLayer.fillColor = UIColor(white: 0, alpha: 1.0-self.brightness).CGColor
