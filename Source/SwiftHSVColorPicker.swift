@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SwiftHSVColorPicker: UIView {
+public class SwiftHSVColorPicker: UIView {
     var colorWheel: ColorWheel!
     var brightnessView: BrightnessView!
     var selectedColorView: SelectedColorView!
@@ -17,12 +17,12 @@ class SwiftHSVColorPicker: UIView {
     var saturation: CGFloat = 1.0
     var brightness: CGFloat = 1.0
     
-    required init(coder aDecoder: NSCoder) {
+    required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.backgroundColor = UIColor.clearColor()
     }
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
     }
     
