@@ -12,7 +12,7 @@ public class SwiftHSVColorPicker: UIView {
     var brightnessView: BrightnessView!
     var selectedColorView: SelectedColorView!
 
-    var color: UIColor!
+    public var color: UIColor!
     var hue: CGFloat = 1.0
     var saturation: CGFloat = 1.0
     var brightness: CGFloat = 1.0
@@ -26,7 +26,7 @@ public class SwiftHSVColorPicker: UIView {
         super.init(frame: frame)
     }
     
-    func setViewColor(color: UIColor) {
+    public func setViewColor(color: UIColor) {
         var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
         var ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
         if (!ok) {
