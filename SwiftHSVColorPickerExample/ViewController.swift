@@ -5,6 +5,7 @@
 //  Created by johankasperi on 2015-08-20.
 //
 
+import Foundation
 import UIKit
 
 class ViewController: UIViewController {
@@ -18,10 +19,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+
         // Setup Color Picker
         colorPicker.setViewColor(selectedColor)
-        
     }
     
     override func viewDidAppear(animated: Bool) {
