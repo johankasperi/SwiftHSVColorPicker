@@ -30,10 +30,10 @@ This will create all the objects of the Color Picker and set they're initial val
 ## Example project
 Please download and run SwiftHSVColorPickerExample for example usage.
 
+## License
+SwiftHSVColorPicker is available under the MIT license. See the LICENSE file for more info.
+
 ## Author
 Johan Kasperi<br>
 [@johankasperi](http://twitter.com/johankasperi)<br>
 [kspri.se](http://kspri.se)
-
-## License
-SwiftHSVColorPicker is available under the MIT license. See the LICENSE file for more info.
