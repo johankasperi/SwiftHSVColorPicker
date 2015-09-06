@@ -1,7 +1,7 @@
 # SwiftHSVColorPicker
 
 ## Description
-![alt tag](https://raw.github.com/johankasperi/SwiftHSVColorPicker/master/screenshot.png)
+![alt tag](https://raw.github.com/johankasperi/SwiftHSVColorPicker/master/screenshot.png)<br>
 Simple HSV Color Picker for iOS made in Swift. Includes a Hue and Saturation wheel, Brightness slider and a UIView for displaying the selected color.
 
 ## Installation
