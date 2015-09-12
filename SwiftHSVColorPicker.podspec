@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name         = 'SwiftHSVColorPicker'
-	s.version      = '1.0.4'
+	s.version      = '1.0.5'
 	s.summary      = 'Swift HSV Color Picker'
 	s.description  = 'A HSV Color Picker for iOS including a color wheel, brightness slider and a view for the selected color.'
 	s.homepage     = 'https://github.com/johankasperi/SwiftHSVColorPicker'

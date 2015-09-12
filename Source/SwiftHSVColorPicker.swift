@@ -17,7 +17,7 @@ public class SwiftHSVColorPicker: UIView {
     var saturation: CGFloat = 1.0
     var brightness: CGFloat = 1.0
     
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.backgroundColor = UIColor.clearColor()
     }
@@ -28,9 +28,9 @@ public class SwiftHSVColorPicker: UIView {
     
     public func setViewColor(color: UIColor) {
         var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
-        var ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        let ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
         if (!ok) {
-            println("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
+            print("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
         }
         self.hue = hue
         self.saturation = saturation
@@ -41,8 +41,8 @@ public class SwiftHSVColorPicker: UIView {
     
     func setup() {
         // Remove all subviews
-        var views = self.subviews
-        for view in views as! [UIView] {
+        let views = self.subviews
+        for view in views {
             view.removeFromSuperview()
         }
 

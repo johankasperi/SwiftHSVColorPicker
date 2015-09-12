@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         // Get the selected color from the Color Picker.
         let selectedColor = colorPicker.color
         
-        println(selectedColor)
+        print(selectedColor)
     }
 }
 

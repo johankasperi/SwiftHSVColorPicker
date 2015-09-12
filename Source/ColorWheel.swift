@@ -29,7 +29,7 @@ class ColorWheel: UIView {
     
     var delegate: SwiftHSVColorPicker?
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder);
     }
     
@@ -59,14 +59,14 @@ class ColorWheel: UIView {
         setViewColor(color);
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         indicatorCircleRadius = 18.0
         // Set reference to the location of the touch in member point
-        if let touch = touches.first as? UITouch {
+        if let touch = touches.first {
             point = touch.locationInView(self)
         }
         
-        var indicator = getIndicatorCoordinate(point)
+        let indicator = getIndicatorCoordinate(point)
         point = indicator.point
         var color = (hue: CGFloat(0), saturation: CGFloat(0))
         if !indicator.isCenter  {
@@ -80,12 +80,12 @@ class ColorWheel: UIView {
         drawIndicator()
     }
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         // Set reference to the location of the touchesMoved in member point
-        if let touch = touches.first as? UITouch {
+        if let touch = touches.first {
             point = touch.locationInView(self)
         }
-        var indicator = getIndicatorCoordinate(point)
+        let indicator = getIndicatorCoordinate(point)
         point = indicator.point
         var color = (hue: CGFloat(0), saturation: CGFloat(0))
         if !indicator.isCenter  {
@@ -100,14 +100,14 @@ class ColorWheel: UIView {
         drawIndicator()
     }
     
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         indicatorCircleRadius = 12.0
         // Set reference to the location of the touch in member point
-        if let touch = touches.first as? UITouch {
+        if let touch = touches.first {
             point = touch.locationInView(self)
         }
         
-        var indicator = getIndicatorCoordinate(point)
+        let indicator = getIndicatorCoordinate(point)
         point = indicator.point
         var color = (hue: CGFloat(0), saturation: CGFloat(0))
         if !indicator.isCenter  {
@@ -169,9 +169,9 @@ class ColorWheel: UIView {
         let dimension: CGFloat = min(originalWidth*scale, originalHeight*scale)
         let bufferLength: Int = Int(dimension * dimension * 4)
         
-        var bitmapData: CFMutableDataRef = CFDataCreateMutable(nil, 0)
+        let bitmapData: CFMutableDataRef = CFDataCreateMutable(nil, 0)
         CFDataSetLength(bitmapData, CFIndex(bufferLength))
-        var bitmap = CFDataGetMutableBytePtr(bitmapData)
+        let bitmap = CFDataGetMutableBytePtr(bitmapData)
         
         for (var y: CGFloat = 0; y < dimension; y++) {
             for (var x: CGFloat = 0; x < dimension; x++) {
@@ -196,7 +196,7 @@ class ColorWheel: UIView {
                     hsv.alpha = a
                     rgb = hsv2rgb(hsv)
                 }
-                var offset = Int(4 * (x + y * dimension))
+                let offset = Int(4 * (x + y * dimension))
                 bitmap[offset] = UInt8(rgb.red*255)
                 bitmap[offset + 1] = UInt8(rgb.green*255)
                 bitmap[offset + 2] = UInt8(rgb.blue*255)
@@ -205,11 +205,11 @@ class ColorWheel: UIView {
         }
         
         // Convert the bitmap to a CGImage
-        let colorSpace: CGColorSpaceRef = CGColorSpaceCreateDeviceRGB()
-        let dataProvider: CGDataProviderRef = CGDataProviderCreateWithCFData(bitmapData)
+        let colorSpace: CGColorSpaceRef? = CGColorSpaceCreateDeviceRGB()
+        let dataProvider: CGDataProviderRef? = CGDataProviderCreateWithCFData(bitmapData)
         let bitmapInfo = CGBitmapInfo(rawValue: CGBitmapInfo.ByteOrderDefault.rawValue | CGImageAlphaInfo.Last.rawValue)
-        let imageRef: CGImageRef = CGImageCreate(Int(dimension), Int(dimension), 8, 32, Int(dimension) * 4, colorSpace, bitmapInfo, dataProvider, nil, false, kCGRenderingIntentDefault)
-        return imageRef
+        let imageRef: CGImageRef? = CGImageCreate(Int(dimension), Int(dimension), 8, 32, Int(dimension) * 4, colorSpace, bitmapInfo, dataProvider, nil, false, CGColorRenderingIntent.RenderingIntentDefault)
+        return imageRef!
     }
     
     func hueSaturationAtPoint(position: CGPoint) -> (hue: CGFloat, saturation: CGFloat) {
@@ -220,7 +220,7 @@ class ColorWheel: UIView {
         let dy = CGFloat(position.y - c) / c
         let d = sqrt(CGFloat (dx * dx + dy * dy))
         
-        var saturation: CGFloat = d
+        let saturation: CGFloat = d
         
         var hue: CGFloat
         if (d == 0) {
@@ -239,7 +239,6 @@ class ColorWheel: UIView {
         
         let dimension: CGFloat = min(wheelLayer.frame.width, wheelLayer.frame.height)
         let radius: CGFloat = saturation * dimension / 2
-        let halfDimension: CGFloat = dimension / 2
         let x = dimension / 2 + radius * cos(hue * CGFloat(M_PI) * 2)
         let y = dimension / 2 + radius * sin(hue * CGFloat(M_PI) * 2)
         return CGPointMake(x, y)
@@ -249,9 +248,9 @@ class ColorWheel: UIView {
         // Update the entire view with a given color
         
         var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
-        var ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        let ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
         if (!ok) {
-            println("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
+            print("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
         }
         self.color = color
         self.brightness = brightness
@@ -264,9 +263,9 @@ class ColorWheel: UIView {
         // Update the brightness of the view
         
         var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
-        var ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        let ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
         if (!ok) {
-            println("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
+            print("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
         }
         self.brightness = _brightness
         brightnessLayer.fillColor = UIColor(white: 0, alpha: 1.0-self.brightness).CGColor

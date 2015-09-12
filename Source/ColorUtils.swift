@@ -20,11 +20,11 @@ func hsv2rgb(hsv: HSV) -> RGB {
     var g: CGFloat
     var b: CGFloat
     
-    var i = Int(hsv.hue * 6)
-    var f = hsv.hue * 6 - CGFloat(i)
-    var p = hsv.brightness * (1 - hsv.saturation)
-    var q = hsv.brightness * (1 - f * hsv.saturation)
-    var t = hsv.brightness * (1 - (1 - f) * hsv.saturation)
+    let i = Int(hsv.hue * 6)
+    let f = hsv.hue * 6 - CGFloat(i)
+    let p = hsv.brightness * (1 - hsv.saturation)
+    let q = hsv.brightness * (1 - f * hsv.saturation)
+    let t = hsv.brightness * (1 - (1 - f) * hsv.saturation)
     switch (i % 6) {
         case 0: r = hsv.brightness; g = t; b = p; break;
         
@@ -60,7 +60,7 @@ func rgb2hsv(rgb: RGB) -> HSV {
     let minV: CGFloat = min(rd, min(gd, bd))
     var h: CGFloat = 0
     var s: CGFloat = 0
-    var b: CGFloat = maxV
+    let b: CGFloat = maxV
     
     let d: CGFloat = maxV - minV
     

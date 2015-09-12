@@ -30,9 +30,9 @@ class BrightnessView: UIView {
         // Create a gradient layer that goes from black to white
         // Create a gradient layer that goes from black to white
         var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
-        var ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        let ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
         if (!ok) {
-            println("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
+            print("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
         }
         colorLayer = CAGradientLayer()
         colorLayer.colors = [
@@ -55,13 +55,13 @@ class BrightnessView: UIView {
         drawIndicator()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         // Set reference to the location of the touch in member point
-        if let touch = touches.first as? UITouch {
+        if let touch = touches.first  {
             point = touch.locationInView(self)
         }
         point.y = self.frame.height/2
@@ -72,9 +72,9 @@ class BrightnessView: UIView {
         drawIndicator()
     }
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         // Set reference to the location of the touchesMoved in member point
-        if let touch = touches.first as? UITouch {
+        if let touch = touches.first {
             point = touch.locationInView(self)
         }
         
@@ -112,9 +112,9 @@ class BrightnessView: UIView {
     func getPointFromColor(color: UIColor) -> CGPoint {
         // Update the indicator position for a given color
         var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
-        var ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        let ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
         if (!ok) {
-            println("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
+            print("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
         }
 
         return CGPoint(x: brightness * frame.width, y: frame.height / 2)
@@ -123,9 +123,9 @@ class BrightnessView: UIView {
     func setViewColor(color: UIColor!) {
         // Update the Gradient Layer with a given color
         var hue: CGFloat = 0.0, saturation: CGFloat = 0.0, brightness: CGFloat = 0.0, alpha: CGFloat = 0.0
-        var ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        let ok: Bool = color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
         if (!ok) {
-            println("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
+            print("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
         }
         colorLayer.colors = [
             UIColor.blackColor().CGColor,
