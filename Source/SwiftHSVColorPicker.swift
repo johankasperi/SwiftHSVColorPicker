@@ -47,7 +47,6 @@ public class SwiftHSVColorPicker: UIView {
         }
 
         let width = self.bounds.width
-        let height = self.bounds.height
         
         // Init SelectedColorView subview
         selectedColorView = SelectedColorView(frame: CGRect(x: 0, y:0, width: width, height: 44), color: self.color)
