@@ -10,7 +10,7 @@ Manual:
 Copy the contents of "Source" to your project.
 </pre>
 
-Cocoapods:
+CocoaPods:
 ```ruby
 pod 'SwiftHSVColorPicker', '~> 1.0.5'
 ```
