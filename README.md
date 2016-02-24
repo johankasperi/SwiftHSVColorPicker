@@ -12,7 +12,7 @@ Copy the contents of "Source" to your project.
 
 Cocoapods:
 ```ruby
-pod 'SwiftHSVColorPicker', '~> 1.0.5'
+pod 'SwiftHSVColorPicker', '~> 1.0.6'
 ```
 
 ## How to use
