@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     // Init ColorPicker with yellow
-    var selectedColor: UIColor = UIColor.yellowColor()
+    var selectedColor: UIColor = UIColor.whiteColor()
     
     // IBOutlet for the ColorPicker
     @IBOutlet var colorPicker: SwiftHSVColorPicker!
