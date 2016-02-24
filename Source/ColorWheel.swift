@@ -61,47 +61,19 @@ class ColorWheel: UIView {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         indicatorCircleRadius = 18.0
-        // Set reference to the location of the touch in member point
-        if let touch = touches.first {
-            point = touch.locationInView(self)
-        }
-        
-        let indicator = getIndicatorCoordinate(point)
-        point = indicator.point
-        var color = (hue: CGFloat(0), saturation: CGFloat(0))
-        if !indicator.isCenter  {
-            color = hueSaturationAtPoint(CGPointMake(point.x*scale, point.y*scale))
-        }
-        self.color = UIColor(hue: color.hue, saturation: color.saturation, brightness: self.brightness, alpha: 1.0)
-
-        // Notify delegate of the new Hue and Saturation
-        delegate?.hueAndSaturationSelected(color.hue, saturation: color.saturation)
-        
-        drawIndicator()
+        touchHandler(touches)
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        // Set reference to the location of the touchesMoved in member point
-        if let touch = touches.first {
-            point = touch.locationInView(self)
-        }
-        let indicator = getIndicatorCoordinate(point)
-        point = indicator.point
-        var color = (hue: CGFloat(0), saturation: CGFloat(0))
-        if !indicator.isCenter  {
-            color = hueSaturationAtPoint(CGPointMake(point.x*scale, point.y*scale))
-        }
-        self.color = UIColor(hue: color.hue, saturation: color.saturation, brightness: self.brightness, alpha: 1.0)
-
-        // Notify delegate of the new Hue and Saturation
-        delegate?.hueAndSaturationSelected(color.hue, saturation: color.saturation)
-        
-        // Draw the indicator
-        drawIndicator()
+        touchHandler(touches)
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         indicatorCircleRadius = 12.0
+        touchHandler(touches)
+    }
+    
+    func touchHandler(touches: Set<UITouch>) {
         // Set reference to the location of the touch in member point
         if let touch = touches.first {
             point = touch.locationInView(self)
@@ -123,7 +95,7 @@ class ColorWheel: UIView {
         drawIndicator()
     }
     
-   func drawIndicator() {
+    func drawIndicator() {
         // Draw the indicator
         if (point != nil) {
             indicatorLayer.path = UIBezierPath(roundedRect: CGRect(x: point.x-indicatorCircleRadius, y: point.y-indicatorCircleRadius, width: indicatorCircleRadius*2, height: indicatorCircleRadius*2), cornerRadius: indicatorCircleRadius).CGPath

@@ -60,19 +60,14 @@ class BrightnessView: UIView {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        // Set reference to the location of the touch in member point
-        if let touch = touches.first  {
-            point = touch.locationInView(self)
-        }
-        point.y = self.frame.height/2
-        point.x = getXCoordinate(point.x)
-        // Notify delegate of the new brightness
-        delegate?.brightnessSelected(getBrightnessFromPoint())
-        
-        drawIndicator()
+        touchHandler(touches)
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        touchHandler(touches)
+    }
+    
+    func touchHandler(touches: Set<UITouch>) {
         // Set reference to the location of the touchesMoved in member point
         if let touch = touches.first {
             point = touch.locationInView(self)
