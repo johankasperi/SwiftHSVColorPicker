@@ -45,22 +45,26 @@ public class SwiftHSVColorPicker: UIView {
         for view in views {
             view.removeFromSuperview()
         }
-
-        let width = self.bounds.width
+        
+        let selectedColorViewHeight: CGFloat = 44.0
+        let brightnessViewHeight: CGFloat = 26.0
+        
+        // let color wheel get the maximum size that is not overflow from the frame for both width and height
+        let colorWheelSize = min(self.bounds.width, self.bounds.height - selectedColorViewHeight - brightnessViewHeight)
         
         // Init SelectedColorView subview
-        selectedColorView = SelectedColorView(frame: CGRect(x: 0, y:0, width: width, height: 44), color: self.color)
+        selectedColorView = SelectedColorView(frame: CGRect(x: 0, y:0, width: colorWheelSize, height: selectedColorViewHeight), color: self.color)
         // Add selectedColorView as a subview of this view
         self.addSubview(selectedColorView)
         
         // Init new ColorWheel subview
-        colorWheel = ColorWheel(frame: CGRect(x: 0, y: 44, width: width, height: width), color: self.color)
+        colorWheel = ColorWheel(frame: CGRect(x: 0, y: CGRectGetMaxY(selectedColorView.frame), width: colorWheelSize, height: colorWheelSize), color: self.color)
         colorWheel.delegate = self
         // Add colorWheel as a subview of this view
         self.addSubview(colorWheel)
         
         // Init new BrightnessView subview
-        brightnessView = BrightnessView(frame: CGRect(x: 0, y: width+44, width: width, height: 26), color: self.color)
+        brightnessView = BrightnessView(frame: CGRect(x: 0, y: CGRectGetMaxY(colorWheel.frame), width: colorWheelSize, height: brightnessViewHeight), color: self.color)
         brightnessView.delegate = self
         // Add brightnessView as a subview of this view
         self.addSubview(brightnessView)
