@@ -145,8 +145,8 @@ class ColorWheel: UIView {
         CFDataSetLength(bitmapData, CFIndex(bufferLength))
         let bitmap = CFDataGetMutableBytePtr(bitmapData)
         
-        for (var y: CGFloat = 0; y < dimension; y++) {
-            for (var x: CGFloat = 0; x < dimension; x++) {
+        for y in CGFloat(0).stride(to: dimension, by: CGFloat(1)) {
+            for x in CGFloat(0).stride(to: dimension, by: CGFloat(1)) {
                 var hsv: HSV = (hue: 0, saturation: 0, brightness: 0, alpha: 0)
                 var rgb: RGB = (red: 0, green: 0, blue: 0, alpha: 0)
                 
