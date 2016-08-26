@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class SwiftHSVColorPicker: UIView {
+public class SwiftHSVColorPicker: UIView, ColorWheelDelegate, BrightnessViewDelegate {
     var colorWheel: ColorWheel!
     var brightnessView: BrightnessView!
     var selectedColorView: SelectedColorView!

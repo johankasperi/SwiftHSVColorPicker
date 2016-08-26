@@ -7,10 +7,14 @@
 
 import UIKit
 
-class BrightnessView: UIView {
-    
-    var delegate: SwiftHSVColorPicker?
+protocol BrightnessViewDelegate: class {
+   func brightnessSelected(brightness: CGFloat)
+}
 
+class BrightnessView: UIView {
+  
+    weak var delegate: BrightnessViewDelegate?
+  
     var colorLayer: CAGradientLayer!
     
     var point: CGPoint!

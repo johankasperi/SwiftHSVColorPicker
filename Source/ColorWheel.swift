@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ColorWheelDelegate: class {
+    func hueAndSaturationSelected(hue: CGFloat, saturation: CGFloat)
+}
+
 class ColorWheel: UIView {
     var color: UIColor!
 
@@ -27,8 +31,8 @@ class ColorWheel: UIView {
     // Retina scaling factor
     let scale: CGFloat = UIScreen.mainScreen().scale
     
-    var delegate: SwiftHSVColorPicker?
-    
+    weak var delegate: ColorWheelDelegate?
+  
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder);
     }
