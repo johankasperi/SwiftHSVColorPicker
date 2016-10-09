@@ -184,7 +184,7 @@ class ColorWheel: UIView {
         let colorSpace: CGColorSpaceRef? = CGColorSpaceCreateDeviceRGB()
         let dataProvider: CGDataProviderRef? = CGDataProviderCreateWithCFData(bitmapData)
         let bitmapInfo = CGBitmapInfo(rawValue: CGBitmapInfo.ByteOrderDefault.rawValue | CGImageAlphaInfo.Last.rawValue)
-        let imageRef: CGImageRef? = CGImageCreate(Int(dimension), Int(dimension), 8, 32, Int(dimension) * 4, colorSpace, bitmapInfo, dataProvider, nil, false, CGColorRenderingIntent.RenderingIntentDefault)
+        let imageRef: CGImageRef? = CGImageCreate(Int(dimension), Int(dimension), 8, 32, Int(dimension) * 4, colorSpace!, bitmapInfo, dataProvider!, nil, false, CGColorRenderingIntent.RenderingIntentDefault)
         return imageRef!
     }
     
