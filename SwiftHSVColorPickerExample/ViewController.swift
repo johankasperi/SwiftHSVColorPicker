@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     // Init ColorPicker with yellow
-    var selectedColor: UIColor = UIColor.whiteColor()
+    var selectedColor: UIColor = UIColor.white
     
     // IBOutlet for the ColorPicker
     @IBOutlet var colorPicker: SwiftHSVColorPicker!
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         colorPicker.setViewColor(selectedColor)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func getSelectedColor(sender: UIButton) {
+    @IBAction func getSelectedColor(_ sender: UIButton) {
         // Get the selected color from the Color Picker.
         let selectedColor = colorPicker.color
         
