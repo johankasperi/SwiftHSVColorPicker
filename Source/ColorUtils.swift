@@ -13,7 +13,7 @@ typealias RGB = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
 // Typealias for HSV color values
 typealias HSV = (hue: CGFloat, saturation: CGFloat, brightness: CGFloat, alpha: CGFloat)
 
-func hsv2rgb(hsv: HSV) -> RGB {
+func hsv2rgb(_ hsv: HSV) -> RGB {
     // Converts HSV to a RGB color
     var rgb: RGB = (red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
     var r: CGFloat
@@ -48,7 +48,7 @@ func hsv2rgb(hsv: HSV) -> RGB {
     return rgb
 }
 
-func rgb2hsv(rgb: RGB) -> HSV {
+func rgb2hsv(_ rgb: RGB) -> HSV {
     // Converts RGB to a HSV color
     var hsb: HSV = (hue: 0.0, saturation: 0.0, brightness: 0.0, alpha: 0.0)
     
