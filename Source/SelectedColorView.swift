@@ -20,7 +20,7 @@ class SelectedColorView: UIView {
         setViewColor(color)
     }
     
-    func setViewColor(_ _color: UIColor) {
+    func setViewColor(_color: UIColor) {
         color = _color
         setBackgroundColor()
     }

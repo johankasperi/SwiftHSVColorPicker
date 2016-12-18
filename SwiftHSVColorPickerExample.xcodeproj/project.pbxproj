@@ -180,12 +180,10 @@
 				TargetAttributes = {
 					4F90DD9D1B9BD0270008F191 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = D9X6K92XMK;
 						LastSwiftMigration = 0800;
 					};
 					4F90DDB21B9BD0270008F191 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = D9X6K92XMK;
 						LastSwiftMigration = 0800;
 						TestTargetID = 4F90DD9D1B9BD0270008F191;
 					};
@@ -366,12 +364,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D9X6K92XMK;
 				INFOPLIST_FILE = SwiftHSVColorPickerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kspri.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -379,12 +376,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D9X6K92XMK;
 				INFOPLIST_FILE = SwiftHSVColorPickerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kspri.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -392,7 +388,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = D9X6K92XMK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -405,7 +400,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kspri.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftHSVColorPickerExample.app/SwiftHSVColorPickerExample";
 			};
 			name = Debug;
@@ -414,7 +409,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = D9X6K92XMK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -423,7 +417,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kspri.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftHSVColorPickerExample.app/SwiftHSVColorPickerExample";
 			};
 			name = Release;
