@@ -31,6 +31,11 @@ class ColorWheel: UIView {
     // Retina scaling factor
     let scale: CGFloat = UIScreen.main.scale
     
+    @available(iOS 10.0, iOSApplicationExtension 10.0, *)
+    lazy var hapticSelectionGenerator: UISelectionFeedbackGenerator! = {
+        return UISelectionFeedbackGenerator()
+    }()
+    
     weak var delegate: ColorWheelDelegate?
   
     required init?(coder aDecoder: NSCoder) {
@@ -131,9 +136,17 @@ class ColorWheel: UIView {
         let whiteThreshold: CGFloat = 10
         var isCenter = false
         if (distance < whiteThreshold) {
+            if #available(iOS 10.0, iOSApplicationExtension 10.0, *) {
+                hapticSelectionGenerator.selectionChanged()
+            }
+            
             outputCoord.x = wheelLayerCenter.x
             outputCoord.y = wheelLayerCenter.y
             isCenter = true
+        } else {
+            if #available(iOS 10.0, iOSApplicationExtension 10.0, *) {
+                hapticSelectionGenerator.prepare()
+            }
         }
         return (outputCoord, isCenter)
     }
