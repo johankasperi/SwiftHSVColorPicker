@@ -27,9 +27,15 @@ class ColorWheel: UIView {
     var indicatorCircleRadius: CGFloat = 12.0
     var indicatorColor: CGColor = UIColor.lightGray.cgColor
     var indicatorBorderWidth: CGFloat = 2.0
+    var isAtCenter = true
     
     // Retina scaling factor
     let scale: CGFloat = UIScreen.main.scale
+    
+    @available(iOS 10.0, iOSApplicationExtension 10.0, *)
+    lazy var hapticSelectionGenerator: UISelectionFeedbackGenerator! = {
+        return UISelectionFeedbackGenerator()
+    }()
     
     weak var delegate: ColorWheelDelegate?
   
@@ -83,10 +89,9 @@ class ColorWheel: UIView {
             point = touch.location(in: self)
         }
         
-        let indicator = getIndicatorCoordinate(point)
-        point = indicator.point
+        updateIndicatorCoordinate(point)
         var color = (hue: CGFloat(0), saturation: CGFloat(0))
-        if !indicator.isCenter  {
+        if !isAtCenter  {
             color = hueSaturationAtPoint(CGPoint(x: point.x*scale, y: point.y*scale))
         }
         
@@ -108,7 +113,7 @@ class ColorWheel: UIView {
         }
     }
     
-    func getIndicatorCoordinate(_ coord: CGPoint) -> (point: CGPoint, isCenter: Bool) {
+    func updateIndicatorCoordinate(_ coord: CGPoint) {
         // Making sure that the indicator can't get outside the Hue and Saturation wheel
         
         let dimension: CGFloat = min(wheelLayer.frame.width, wheelLayer.frame.height)
@@ -129,13 +134,25 @@ class ColorWheel: UIView {
         
         // If the touch coordinate is close to center, focus it to the very center at set the color to white
         let whiteThreshold: CGFloat = 10
-        var isCenter = false
         if (distance < whiteThreshold) {
             outputCoord.x = wheelLayerCenter.x
             outputCoord.y = wheelLayerCenter.y
-            isCenter = true
+            
+            if !isAtCenter {
+                if #available(iOS 10.0, iOSApplicationExtension 10.0, *) {
+                    hapticSelectionGenerator.selectionChanged()
+                }
+            }
+            
+            isAtCenter = true
+        } else {
+            isAtCenter = false
+            
+            if #available(iOS 10.0, iOSApplicationExtension 10.0, *) {
+                hapticSelectionGenerator.prepare()
+            }
         }
-        return (outputCoord, isCenter)
+        point = outputCoord
     }
     
     func createColorWheel(_ size: CGSize) -> CGImage {
