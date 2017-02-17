@@ -12,7 +12,7 @@ open class SwiftHSVColorPicker: UIView, ColorWheelDelegate, BrightnessViewDelega
     var brightnessView: BrightnessView!
     var selectedColorView: SelectedColorView!
 
-    open var color: UIColor!
+    open var color: UIColor = UIColor.white
     var hue: CGFloat = 1.0
     var saturation: CGFloat = 1.0
     var brightness: CGFloat = 1.0
@@ -20,10 +20,12 @@ open class SwiftHSVColorPicker: UIView, ColorWheelDelegate, BrightnessViewDelega
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.backgroundColor = UIColor.clear
+        setViewColor(self.color)
     }
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
+        setViewColor(self.color)
     }
     
     open func setViewColor(_ color: UIColor) {
