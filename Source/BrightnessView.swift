@@ -25,6 +25,10 @@ class BrightnessView: UIView {
     init(frame: CGRect, color: UIColor) {
         super.init(frame: frame)
         
+        // Enable direct interaction for VoiceOver users
+        self.isAccessibilityElement = true
+        self.accessibilityTraits |= UIAccessibilityTraitAllowsDirectInteraction
+        
         // Init the point at the correct position
         point = getPointFromColor(color)
         
