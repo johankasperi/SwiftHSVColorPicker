@@ -42,6 +42,10 @@ class ColorWheel: UIView {
         
         self.color = color
         
+        // Enable direct interaction for VoiceOver users
+        self.isAccessibilityElement = true
+        self.accessibilityTraits |= UIAccessibilityTraitAllowsDirectInteraction
+        
         // Layer for the Hue/Saturation wheel
         wheelLayer = CALayer()
         wheelLayer.frame = CGRect(x: 20, y: 20, width: self.frame.width-40, height: self.frame.height-40)
