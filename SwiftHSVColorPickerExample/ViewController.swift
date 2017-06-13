@@ -22,6 +22,7 @@ class ViewController: UIViewController {
 
         // Setup Color Picker
         colorPicker.setViewColor(selectedColor)
+        colorPicker.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,5 +39,11 @@ class ViewController: UIViewController {
         let selectedColor = colorPicker.color
         
         print(selectedColor!)
+    }
+}
+
+extension ViewController: SwiftHSVColorPickerDelegate {
+    func colorPicker(_ picker: SwiftHSVColorPicker, didChangeColor color: UIColor) {
+        print("did change color: \(color)")
     }
 }
