@@ -91,11 +91,12 @@ public extension UIColor {
     
     var sRGBColor: UIColor {
         if #available(iOS 10.0, *) {
-            // Only iOS 10.0 and above requires conversion from extended to sRGB.
+            // Only iOS 10.0 and above requires conversion from other color space to sRGB.
+            // On earlier versions of iOS, the specified values of red, green and blue are always between 0.0 and 1.0.
             var sRGBColor: CGColor? = nil
             if let colorSpaceName = cgColor.colorSpace?.name {
-                let compareResult = CFStringCompare(colorSpaceName, CGColorSpace.extendedSRGB, CFStringCompareFlags(rawValue: 0))
-                if compareResult == .compareEqualTo, let sRGBSpace = CGColorSpace(name: CGColorSpace.sRGB),
+                let compareResult = CFStringCompare(colorSpaceName, CGColorSpace.sRGB, CFStringCompareFlags(rawValue: 0))
+                if compareResult != .compareEqualTo, let sRGBSpace = CGColorSpace(name: CGColorSpace.sRGB),
                     let sRGBConvertedColor = cgColor.converted(to: sRGBSpace, intent: .defaultIntent, options: nil) {
                     sRGBColor = sRGBConvertedColor
                 } else {
