@@ -86,3 +86,31 @@ func rgb2hsv(_ rgb: RGB) -> HSV {
     hsb.alpha = rgb.alpha
     return hsb
 }
+
+public extension UIColor {
+    
+    var sRGBColor: UIColor {
+        if #available(iOS 10.0, *) {
+            // Only iOS 10.0 and above requires conversion from extended to sRGB.
+            var sRGBColor: CGColor? = nil
+            if let colorSpaceName = cgColor.colorSpace?.name {
+                let compareResult = CFStringCompare(colorSpaceName, CGColorSpace.extendedSRGB, CFStringCompareFlags(rawValue: 0))
+                if compareResult == .compareEqualTo, let sRGBSpace = CGColorSpace(name: CGColorSpace.sRGB),
+                    let sRGBConvertedColor = cgColor.converted(to: sRGBSpace, intent: .defaultIntent, options: nil) {
+                    sRGBColor = sRGBConvertedColor
+                } else {
+                    sRGBColor = cgColor
+                }
+            }
+            
+            if let sRGBColor = sRGBColor {
+                let color = UIColor(cgColor: sRGBColor)
+                return color
+            }
+            return self
+        } else {
+            // Fallback on earlier versions.
+            return self
+        }
+    }
+}

@@ -21,8 +21,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
 
         // Setup Color Picker
-        colorPicker.setViewColor(selectedColor)
         colorPicker.delegate = self
+        colorPicker.setViewColor(selectedColor)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,6 +44,6 @@ class ViewController: UIViewController {
 
 extension ViewController: SwiftHSVColorPickerDelegate {
     func colorPicker(_ picker: SwiftHSVColorPicker, didChangeColor color: UIColor) {
-        print("did change color: \(color)")
+        print("did change color to: \(color), sRGB equivalent: \(color.sRGBColor)")
     }
 }
