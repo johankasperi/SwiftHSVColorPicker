@@ -202,7 +202,7 @@ class ColorWheel: UIView {
         if (d == 0) {
             hue = 0;
         } else {
-            hue = acos(dx/d) / CGFloat(M_PI) / 2.0
+            hue = acos(dx/d) / CGFloat(Double.pi) / 2.0
             if (dy < 0) {
                 hue = 1.0 - hue
             }
@@ -215,8 +215,8 @@ class ColorWheel: UIView {
         
         let dimension: CGFloat = min(wheelLayer.frame.width, wheelLayer.frame.height)
         let radius: CGFloat = saturation * dimension / 2
-        let x = dimension / 2 + radius * cos(hue * CGFloat(M_PI) * 2) + 20;
-        let y = dimension / 2 + radius * sin(hue * CGFloat(M_PI) * 2) + 20;
+        let x = dimension / 2 + radius * cos(hue * CGFloat(Double.pi) * 2) + 20;
+        let y = dimension / 2 + radius * sin(hue * CGFloat(Double.pi) * 2) + 20;
         return CGPoint(x: x, y: y)
     }
     
