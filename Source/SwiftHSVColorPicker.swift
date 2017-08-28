@@ -49,12 +49,10 @@ open class SwiftHSVColorPicker: UIView, ColorWheelDelegate, BrightnessViewDelega
     
     func setupIfNeeded() {
         if colorWheel != nil && brightnessView != nil && selectedColorView != nil {
-            print("update")
             colorWheel.setViewBrightness(brightness)
             brightnessView.setViewColor(color)
             selectedColorView.setViewColor(color)
         } else {
-            print("setup")
             // Remove all subviews
             let views = self.subviews
             for view in views {
