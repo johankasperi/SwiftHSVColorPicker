@@ -64,7 +64,7 @@ func rgb2hsv(_ rgb: RGB) -> HSV {
     
     let d: CGFloat = maxV - minV
     
-    s = maxV == 0 ? 0 : d / minV;
+    s = maxV == 0 ? 0 : d / maxV;
     
     if (maxV == minV) {
         h = 0
