@@ -7,11 +7,16 @@
 
 import UIKit
 
+public protocol SwiftHSVColorPickerDelegate: class {
+    func swiftHSVColorPicker(_ color: UIColor)
+}
+
 open class SwiftHSVColorPicker: UIView, ColorWheelDelegate, BrightnessViewDelegate {
     var colorWheel: ColorWheel!
     var brightnessView: BrightnessView!
     var selectedColorView: SelectedColorView!
-
+    
+    open weak var delegate: SwiftHSVColorPickerDelegate?
     open var color: UIColor!
     var hue: CGFloat = 1.0
     var saturation: CGFloat = 1.0
@@ -71,6 +76,7 @@ open class SwiftHSVColorPicker: UIView, ColorWheelDelegate, BrightnessViewDelega
         brightnessView.delegate = self
         // Add brightnessView as a subview of this view
         self.addSubview(brightnessView)
+        self.delegate?.swiftHSVColorPicker(self.color)
     }
     
     func hueAndSaturationSelected(_ hue: CGFloat, saturation: CGFloat) {
@@ -79,6 +85,7 @@ open class SwiftHSVColorPicker: UIView, ColorWheelDelegate, BrightnessViewDelega
         self.color = UIColor(hue: self.hue, saturation: self.saturation, brightness: self.brightness, alpha: 1.0)
         brightnessView.setViewColor(self.color)
         selectedColorView.setViewColor(self.color)
+        self.delegate?.swiftHSVColorPicker(self.color)
     }
     
     func brightnessSelected(_ brightness: CGFloat) {
@@ -86,5 +93,6 @@ open class SwiftHSVColorPicker: UIView, ColorWheelDelegate, BrightnessViewDelega
         self.color = UIColor(hue: self.hue, saturation: self.saturation, brightness: self.brightness, alpha: 1.0)
         colorWheel.setViewBrightness(brightness)
         selectedColorView.setViewColor(self.color)
+        self.delegate?.swiftHSVColorPicker(self.color)
     }
 }
