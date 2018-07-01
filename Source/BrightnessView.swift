@@ -8,13 +8,13 @@
 import UIKit
 
 protocol BrightnessViewDelegate: class {
-   func brightnessSelected(_ brightness: CGFloat)
+    func brightnessSelected(_ brightness: CGFloat)
 }
 
 class BrightnessView: UIView {
-  
+    
     weak var delegate: BrightnessViewDelegate?
-  
+    
     var colorLayer: CAGradientLayer!
     
     var point: CGPoint!
@@ -40,8 +40,8 @@ class BrightnessView: UIView {
         }
         colorLayer = CAGradientLayer()
         colorLayer.colors = [
-            UIColor.black.cgColor,
-            UIColor(hue: hue, saturation: saturation, brightness: 1, alpha: 1).cgColor
+            UIColor(hue: hue, saturation: saturation, brightness: 1, alpha: 1).cgColor,
+            UIColor.black.cgColor
         ]
         colorLayer.locations = [0.0, 1.0]
         colorLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
@@ -105,7 +105,7 @@ class BrightnessView: UIView {
     
     func getBrightnessFromPoint() -> CGFloat {
         // Get the brightness value for a given point
-        return point.x/self.frame.width
+        return 1-point.x/self.frame.width
     }
     
     func getPointFromColor(_ color: UIColor) -> CGPoint {
@@ -115,8 +115,7 @@ class BrightnessView: UIView {
         if (!ok) {
             print("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
         }
-
-        return CGPoint(x: brightness * frame.width, y: frame.height / 2)
+        return CGPoint(x: (1 - brightness) * frame.width, y: frame.height / 2)
     }
     
     func setViewColor(_ color: UIColor!) {
@@ -127,8 +126,8 @@ class BrightnessView: UIView {
             print("SwiftHSVColorPicker: exception <The color provided to SwiftHSVColorPicker is not convertible to HSV>")
         }
         colorLayer.colors = [
-            UIColor.black.cgColor,
-            UIColor(hue: hue, saturation: saturation, brightness: 1, alpha: 1).cgColor
+            UIColor(hue: hue, saturation: saturation, brightness: 1, alpha: 1).cgColor,
+            UIColor.black.cgColor
         ]
     }
 }
